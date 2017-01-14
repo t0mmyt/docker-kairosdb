@@ -8,15 +8,15 @@ Example docker-compose.yaml
 
     ---
     version: "2"
-
     services:
       cassandra:
         image: t0mmyt/cassandra
         ports:
-          - 9042:9042
-          - 9160:9160
+          - 127.0.0.1:9042:9042
+          - 127.0.0.1:9160:9160
       kairosdb:
         image: t0mmyt/kairosdb
+        depends_on: cassandra
         ports:
           - 127.0.0.1:4242:4242
-          - 127.0.0.1:8083:8083
+          - 127.0.0.1:8083:8080
