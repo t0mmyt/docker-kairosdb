@@ -14,5 +14,7 @@ while [[ $iter -gt 0 ]]; do
   sleep $((int - 1))
   iter=$((iter - 1))
 done
+echo "Thrift UP, waiting another 10s for Cassandra to settle"
+sleep 10
 
 exec bin/kairosdb.sh run
