@@ -3,7 +3,7 @@ set -e
 
 export CASSANDRA=${CASSANDRA:-cassandra}
 
-export WAIT=${WAIT:-30}
+export WAIT=${WAIT:-60}
 echo "Waiting up to ${WAIT}s for cassandra"
 int=5
 iter=$((WAIT / int))
