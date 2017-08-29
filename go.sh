@@ -8,7 +8,7 @@ echo "Waiting up to ${WAIT}s for cassandra"
 int=5
 iter=$((WAIT / int))
 while [[ $iter -gt 0 ]]; do
-  if nc -w1 ${CASSANDRA} 9160; then
+  if nc -w1 -z ${CASSANDRA} 9160; then
     break
   fi
   sleep $((int - 1))
